@@ -9,14 +9,8 @@ class Bank {
     createAccount(name, initialBalance = 0) {
         this.name = name;
         const account = new Account(name, initialBalance);
-        //console.log(`Created account for ${name}, Initial Balance: ${initialBalance}`);
         return account;
     }
-    // createAccount(name, initialDeposit = 0){
-    //     this.name = name;
-    //     const name 
-    //     this.initialDeposit = initialDeposit;
-    // }
     // Example: createAccount(name, initialDeposit)
 
 }
@@ -78,7 +72,7 @@ class Account {
         const accountSending = { transactionType: 'Transfer', amount: amount, to: recipientAccount.name };
         this.transactionHistory.push(accountSending);
 
-        const accountRecieving = { transactionType: 'Transfer', amount: amount, from: this.name };
+        const accountRecieving = { transactionType: 'Received', amount: amount, from: this.name };
         recipientAccount.transactionHistory.push(accountRecieving);
     }
 
